@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import Head from 'next/head';
 import { Header } from '@components/index';
+import { StyledMainLayout } from '@styles/MainLayout.styled';
 
 type Props = {
   children: React.ReactNode;
@@ -9,9 +10,9 @@ type Props = {
 };
 export const MainLayout: FC<Props> = ({ children, title, description }) => {
   return (
-    <>
+    <StyledMainLayout>
       <Head>
-        <title>{title} || Pokemon App</title>
+        <title>{title}|| Pokemon App</title>
         <meta name='author' content='Noel Perez' />
         <meta
           name='description'
@@ -21,6 +22,6 @@ export const MainLayout: FC<Props> = ({ children, title, description }) => {
       </Head>
       <Header />
       <main>{children}</main>
-    </>
+    </StyledMainLayout>
   );
 };

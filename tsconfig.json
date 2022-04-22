@@ -7,7 +7,8 @@
       "@common/*": ["common/*"],
       "@styles/*": ["styles/*"],
       "@layouts/*": ["layouts/*"],
-      "@themes/*": ["themes/*"]
+      "@themes/*": ["themes/*"],
+      "@services/*": ["services/*"],
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
