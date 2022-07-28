@@ -1,4 +1,4 @@
-import App from 'next/app';
+import App from "next/app";
 import Document, {
   Html,
   Head,
@@ -6,8 +6,9 @@ import Document, {
   NextScript,
   DocumentContext,
   DocumentInitialProps,
-} from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+} from "next/document";
+import { ReactElement } from "react";
+import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
   static async getInitialProps(
@@ -26,21 +27,21 @@ export default class MyDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
-        styles: (
+        styles: [
           <>
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>
-        ),
+          </>,
+        ],
       };
     } finally {
       sheet.seal();
     }
   }
 
-  render() {
+  render(): ReactElement {
     return (
-      <Html lang='es'>
+      <Html lang="es">
         <Head />
         <body>
           <Main />
